@@ -19,3 +19,9 @@ def crud_generos(request):
     context={'genero': generos}
     print("Enviando datos a generos_list")
     return render(request,"alumnos/generos_list.html", context)
+
+def alumnosAdd(request):
+    if request.method is not "POST":
+        generos=Genero.objects.all()
+        context={'generos':generos}
+        return render(request, 'alumnos/alumnos_add.html', context)
